@@ -34,14 +34,14 @@ public class LearningPanel extends VBox {
         setPadding(new Insets(10));
         setSpacing(8);
 
-        // Create toolbar
-        toolbar = createToolbar();
-
-        // Create web view for content
+        // Create web view for content FIRST
         webView = new WebView();
         webEngine = webView.getEngine();
 
         setupWebEngine();
+
+        // Now create toolbar (after webEngine is available)
+        toolbar = createToolbar();
 
         // Create status bar
         HBox statusBar = createStatusBar();
@@ -54,7 +54,6 @@ public class LearningPanel extends VBox {
         // Load welcome content
         loadWelcomeContent();
     }
-
     private ToolBar createToolbar() {
         ToolBar toolbar = new ToolBar();
         toolbar.getStyleClass().add("learning-toolbar");

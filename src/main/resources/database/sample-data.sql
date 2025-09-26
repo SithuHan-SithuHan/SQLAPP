@@ -154,11 +154,11 @@ INSERT INTO Person (personId, lastName, firstName) VALUES
                                                        (4, 'Brown', 'Patricia'),
                                                        (5, 'Davis', 'Michael');
 
-INSERT INTO Address (addressId, personId, city, state) VALUES
-                                                           (1, 1, 'San Francisco', 'California'),
-                                                           (2, 2, 'New York', 'New York'),
-                                                           (3, 3, 'Chicago', 'Illinois'),
-                                                           (4, 5, 'Boston', 'Massachusetts');
+INSERT INTO Address (personId, city, state) VALUES
+                                                (1, 'San Francisco', 'California'),
+                                                (2, 'New York', 'New York'),
+                                                (3, 'Chicago', 'Illinois'),
+                                                (5, 'Boston', 'Massachusetts');
 
 -- =====================================================
 -- ADDRESSES DATA (for normalization exercises)

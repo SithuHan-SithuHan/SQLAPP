@@ -77,10 +77,15 @@ public class EmbeddedDatabase {
         log.info("Initializing practice database...");
         practiceConnection = DriverManager.getConnection(PRACTICE_DB_URL, "sa", "");
 
-        // Always create fresh practice tables for exercises
-        executeScript("/database/practice-schema.sql", practiceConnection);
-        executeScript("/database/sample-data.sql", practiceConnection);
-        log.info("Practice database initialized with sample data");
+        // Instead of using script files, use your DatabaseInitializer
+        try {
+            DatabaseInitializer initializer = new DatabaseInitializer(this);
+            initializer.initializeSampleData();
+            log.info("Practice database initialized using DatabaseInitializer");
+        } catch (SQLException e) {
+            log.error("Failed to initialize practice database with DatabaseInitializer", e);
+            throw e;
+        }
     }
 
     private boolean mainTablesExist() throws SQLException {
@@ -97,18 +102,39 @@ public class EmbeddedDatabase {
             }
 
             String script = new Scanner(is, "UTF-8").useDelimiter("\\A").next();
+
+            // Better script parsing
             String[] statements = script.split(";");
 
             try (Statement stmt = connection.createStatement()) {
                 for (String statement : statements) {
+                    // Clean the statement
                     statement = statement.trim();
-                    if (!statement.isEmpty() && !statement.startsWith("--")) {
-                        log.debug("Executing SQL: {}", statement);
-                        stmt.execute(statement);
+
+                    // Skip empty statements and comments
+                    if (statement.isEmpty() ||
+                            statement.startsWith("--") ||
+                            statement.matches("^\\s*--.*$")) {
+                        continue;
+                    }
+
+                    // Remove single-line comments from the statement
+                    String[] lines = statement.split("\n");
+                    StringBuilder cleanStatement = new StringBuilder();
+                    for (String line : lines) {
+                        String cleanLine = line.trim();
+                        if (!cleanLine.startsWith("--") && !cleanLine.isEmpty()) {
+                            cleanStatement.append(cleanLine).append("\n");
+                        }
+                    }
+
+                    String finalStatement = cleanStatement.toString().trim();
+                    if (!finalStatement.isEmpty()) {
+                        log.debug("Executing SQL: {}", finalStatement);
+                        stmt.execute(finalStatement);
                     }
                 }
             }
-
         } catch (Exception e) {
             log.error("Failed to execute script: {}", scriptPath, e);
             throw new SQLException("Failed to execute script: " + scriptPath, e);
@@ -124,8 +150,8 @@ public class EmbeddedDatabase {
     }
 
     public Connection getPracticeConnection() {
-        if (!isInitialized || practiceConnection == null) {
-            throw new IllegalStateException("Database not initialized");
+        if (practiceConnection == null) {
+            throw new IllegalStateException("Practice database connection not available");
         }
         return practiceConnection;
     }

@@ -1,0 +1,27 @@
+{
+  "userId" : "default_user",
+  "completedQuestions" : [ ],
+  "viewedTopics" : [ ],
+  "questionAttempts" : { },
+  "lastAttempted" : { },
+  "statistics" : {
+    "totalQueriesExecuted" : 0,
+    "successfulQueries" : 0,
+    "currentStreak" : 0,
+    "bestStreak" : 0,
+    "totalTimeSpentMs" : 0,
+    "totalPointsEarned" : 0,
+    "categoryProgress" : { },
+    "successRate" : 0.0
+  },
+  "achievements" : {
+    "unlockedBadges" : [ ],
+    "level" : 1,
+    "experiencePoints" : 0,
+    "badgeEarnedDates" : { },
+    "nextLevelXP" : 2000,
+    "levelProgress" : -100.0
+  },
+  "lastUpdated" : "2025-09-26 14:08:31",
+  "completionPercentage" : 0.0
+}
