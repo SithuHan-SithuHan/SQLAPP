@@ -1,0 +1,7 @@
+
+t	java:S116"XRename this field "PROGRESS_FILE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚¢û8ŒÎÖ£˜3
+>
+java:S1170"!Make this final field static too.(‚¢û8ŒÎÖ£˜3
+C	java:S131u""Add a default case to this switch.(çˆãÛûÿÿÿÿ8šÎÖ£˜3
+L
+java:S1068"/Remove this unused "sessionData" private field.(£úÊç8¡ÎÖ£˜3

@@ -1,1036 +1,162 @@
-/*
- * SQL Learning Application - Modern Theme CSS
- * Version: 2.0.0
- * User: SithuHan-SithuHan
- * Repository: https://github.com/SithuHan-SithuHan/SQL_Learning_APP
- * Last Updated: 2025-09-26 05:07:16 UTC
- *
- * Complete modern styling system preserving all original functionality
- * with enhanced visual design and user experience improvements
- */
-
-/* ===== ROOT VARIABLES (MODERN COLOR PALETTE) ===== */
+/* ===== General Styles ===== */
 .root {
-    /* Primary Colors - Professional Blue Theme */
-    -primary-color: #2563eb;
-    -primary-dark: #1d4ed8;
-    -primary-light: #3b82f6;
-    -primary-lighter: #60a5fa;
-    -primary-lightest: #dbeafe;
-
-    /* Semantic Colors */
-    -success-color: #059669;
-    -success-light: #10b981;
-    -success-lightest: #d1fae5;
-
-    -warning-color: #d97706;
-    -warning-light: #f59e0b;
-    -warning-lightest: #fef3c7;
-
-    -danger-color: #dc2626;
-    -danger-light: #ef4444;
-    -danger-lightest: #fecaca;
-
-    -info-color: #0891b2;
-    -info-light: #06b6d4;
-    -info-lightest: #cffafe;
-
-    /* Neutral Colors - Modern Gray Scale */
-    -background-primary: #ffffff;
-    -background-secondary: #f8fafc;
-    -background-tertiary: #f1f5f9;
-    -background-quaternary: #e2e8f0;
-
-    -surface: #ffffff;
-    -surface-variant: #f1f5f9;
-    -surface-hover: #f8fafc;
-    -surface-pressed: #e2e8f0;
-
-    -border-color: #e2e8f0;
-    -border-focus: #3b82f6;
-    -border-error: #ef4444;
-
-    /* Text Colors */
-    -text-primary: #0f172a;
-    -text-secondary: #475569;
-    -text-tertiary: #64748b;
-    -text-quaternary: #94a3b8;
-    -text-inverse: #ffffff;
-    -text-link: #2563eb;
-
-    /* Shadows - Modern Depth System */
-    -shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    -shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    -shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    -shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    -shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    -shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-
-    /* Typography */
-    -font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "SF Pro Display", sans-serif;
-    -font-family-mono: "JetBrains Mono", "Fira Code", "Source Code Pro", "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-
-    -font-size-xs: 0.75rem;     /* 12px */
-    -font-size-sm: 0.875rem;    /* 14px */
-    -font-size-base: 1rem;      /* 16px */
-    -font-size-lg: 1.125rem;    /* 18px */
-    -font-size-xl: 1.25rem;     /* 20px */
-    -font-size-2xl: 1.5rem;     /* 24px */
-    -font-size-3xl: 1.875rem;   /* 30px */
-
-    /* Spacing System */
-    -spacing-1: 0.25rem;    /* 4px */
-    -spacing-2: 0.5rem;     /* 8px */
-    -spacing-3: 0.75rem;    /* 12px */
-    -spacing-4: 1rem;       /* 16px */
-    -spacing-5: 1.25rem;    /* 20px */
-    -spacing-6: 1.5rem;     /* 24px */
-    -spacing-8: 2rem;       /* 32px */
-    -spacing-10: 2.5rem;    /* 40px */
-
-    /* Border Radius */
-    -radius-sm: 0.25rem;    /* 4px */
-    -radius-md: 0.375rem;   /* 6px */
-    -radius-lg: 0.5rem;     /* 8px */
-    -radius-xl: 0.75rem;    /* 12px */
-    -radius-2xl: 1rem;      /* 16px */
-    -radius-full: 9999px;
-
-    /* Transitions */
-    -transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    -transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    -transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    -fx-font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f8fafc;
 }
 
-/* ===== BASE STYLES ===== */
-* {
-    -fx-focus-color: -primary-color;
-    -fx-faint-focus-color: -primary-lightest;
+/* ===== Button Styles ===== */
+.button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
 }
 
-.root {
-    -fx-font-family: -font-family-sans;
-    -fx-font-size: -font-size-sm;
-    -fx-background-color: -background-secondary;
-    -fx-text-fill: -text-primary;
+.button:hover {
+    -fx-background-color: #1d4ed8;
 }
 
-/* ===== MAIN WINDOW STYLING ===== */
-.main-window {
-    -fx-background-color: -background-secondary;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 20, 0, 0, 0);
+.button:pressed {
+    -fx-background-color: #1e40af;
 }
 
-/* ===== ENHANCED MENU BAR ===== */
+/* ===== Menu Bar ===== */
 .menu-bar {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 0 1 0;
-    -fx-padding: 8 16;
-    -fx-effect: -shadow-sm;
-    -fx-font-size: -font-size-sm;
+    -fx-background-color: #1e293b;
+    -fx-text-fill: white;
 }
 
-.menu-bar .menu {
-    -fx-padding: 8 16;
-    -fx-background-radius: -radius-md;
-    -fx-text-fill: -text-primary;
-    -fx-font-weight: 500;
-    -fx-font-size: -font-size-sm;
+.menu-bar .label {
+    -fx-text-fill: white;
 }
 
-.menu-bar .menu:hover {
-    -fx-background-color: -surface-hover;
+.menu:hover {
+    -fx-background-color: #334155;
 }
 
-.menu-bar .menu:showing {
-    -fx-background-color: -primary-lightest;
-    -fx-text-fill: -primary-color;
-}
-
-.menu-bar .menu .label {
-    -fx-text-fill: inherit;
-}
-
-/* Menu Items */
-.context-menu {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-lg;
-    -fx-padding: 8;
-}
-
-.menu-item {
-    -fx-padding: 8 16;
-    -fx-background-radius: -radius-md;
-    -fx-text-fill: -text-primary;
-}
-
-.menu-item:hover {
-    -fx-background-color: -surface-hover;
-}
-
-.menu-item:focused {
-    -fx-background-color: -primary-lightest;
-    -fx-text-fill: -primary-color;
-}
-
-/* ===== TAB PANE STYLING ===== */
-.tab-pane {
-    -fx-background-color: -background-primary;
-    -fx-border-color: transparent;
-}
-
-.tab-pane .tab-header-area {
-    -fx-padding: 0 16 0 16;
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 0 1 0;
-}
-
+/* ===== Tab Pane ===== */
 .tab-pane .tab-header-background {
-    -fx-background-color: transparent;
+    -fx-background-color: #f1f5f9;
 }
 
 .tab-pane .tab {
     -fx-background-color: transparent;
-    -fx-padding: 12 20;
-    -fx-border-radius: -radius-lg -radius-lg 0 0;
-    -fx-background-radius: -radius-lg -radius-lg 0 0;
-    -fx-text-fill: -text-secondary;
-    -fx-font-weight: 500;
-    -fx-font-size: -font-size-sm;
+    -fx-padding: 6px 12px;
+    -fx-font-size: 13px;
 }
 
 .tab-pane .tab:selected {
-    -fx-background-color: -background-primary;
-    -fx-text-fill: -primary-color;
-    -fx-effect: -shadow-sm;
-    -fx-border-color: -border-color -border-color transparent -border-color;
-    -fx-border-width: 1 1 0 1;
-}
-
-.tab-pane .tab:hover:top {
-    -fx-background-color: -surface-hover;
-}
-
-.tab-pane .tab .tab-label {
-    -fx-text-fill: inherit;
-    -fx-font-size: inherit;
-    -fx-font-weight: inherit;
-}
-
-/* Tab Content Area */
-.tab-pane .tab-content-area {
-    -fx-background-color: -background-primary;
-    -fx-padding: 0;
-}
-
-/* ===== ENHANCED BUTTON STYLING ===== */
-.button {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-md;
-    -fx-background-radius: -radius-md;
-    -fx-padding: 8 16;
-    -fx-cursor: hand;
-    -fx-font-weight: 500;
-    -fx-font-size: -font-size-sm;
-    -fx-text-fill: -text-primary;
-    -fx-effect: -shadow-sm;
-    -fx-alignment: center;
-}
-
-.button:hover {
-    -fx-background-color: -surface-hover;
-    -fx-effect: -shadow-md;
-    -fx-scale-x: 1.02;
-    -fx-scale-y: 1.02;
-}
-
-.button:pressed {
-    -fx-background-color: -surface-pressed;
-    -fx-effect: -shadow-xs;
-    -fx-scale-x: 0.98;
-    -fx-scale-y: 0.98;
-}
-
-.button:focused {
-    -fx-border-color: -border-focus;
-    -fx-border-width: 2;
-}
-
-/* Button Variants */
-.button.primary, .button.accent {
-    -fx-background-color: -primary-color;
-    -fx-text-fill: -text-inverse;
-    -fx-border-color: transparent;
-}
-
-.button.primary:hover, .button.accent:hover {
-    -fx-background-color: -primary-dark;
-}
-
-.button.success {
-    -fx-background-color: -success-color;
-    -fx-text-fill: -text-inverse;
-    -fx-border-color: transparent;
-}
-
-.button.success:hover {
-    -fx-background-color: -success-light;
-}
-
-.button.warning {
-    -fx-background-color: -warning-color;
-    -fx-text-fill: -text-inverse;
-    -fx-border-color: transparent;
-}
-
-.button.warning:hover {
-    -fx-background-color: -warning-light;
-}
-
-.button.danger {
-    -fx-background-color: -danger-color;
-    -fx-text-fill: -text-inverse;
-    -fx-border-color: transparent;
-}
-
-.button.danger:hover {
-    -fx-background-color: -danger-light;
-}
-
-.button.secondary {
-    -fx-background-color: -surface-variant;
-    -fx-text-fill: -text-secondary;
-    -fx-border-color: -border-color;
-}
-
-.button.info {
-    -fx-background-color: -info-color;
-    -fx-text-fill: -text-inverse;
-    -fx-border-color: transparent;
-}
-
-/* Button Sizes */
-.button.large {
-    -fx-padding: 12 24;
-    -fx-font-size: -font-size-base;
-}
-
-.button.small {
-    -fx-padding: 6 12;
-    -fx-font-size: -font-size-xs;
-}
-
-/* Icon Buttons */
-.button.icon-only {
-    -fx-padding: 8;
-    -fx-min-width: 36;
-    -fx-pref-width: 36;
-    -fx-min-height: 36;
-    -fx-pref-height: 36;
-}
-
-/* ===== ENHANCED SQL EDITOR STYLING ===== */
-.sql-editor {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-sm;
-    -fx-font-family: -font-family-mono;
-    -fx-font-size: 14px;
-    -fx-text-fill: -text-primary;
-    -fx-padding: 16;
-}
-
-.sql-editor:focused {
-    -fx-border-color: -border-focus;
-    -fx-border-width: 2;
-    -fx-effect: -shadow-md;
-}
-
-/* SQL Syntax Highlighting */
-.sql-keyword {
-    -fx-fill: #0066cc;
+    -fx-background-color: #e2e8f0;
     -fx-font-weight: bold;
 }
 
-.sql-string {
-    -fx-fill: #059669;
-}
-
-.sql-comment {
-    -fx-fill: #64748b;
-    -fx-font-style: italic;
-}
-
-.sql-number {
-    -fx-fill: #d97706;
-    -fx-font-weight: 500;
-}
-
-.sql-function {
-    -fx-fill: #7c3aed;
-    -fx-font-weight: 500;
-}
-
-.sql-operator {
-    -fx-fill: #dc2626;
-    -fx-font-weight: bold;
-}
-
-/* Line Numbers */
-.sql-editor .line-number {
-    -fx-background-color: -surface-variant;
-    -fx-text-fill: -text-tertiary;
-    -fx-font-size: 12px;
-    -fx-padding: 4 8;
-}
-
-/* ===== ENHANCED TABLE STYLING ===== */
+/* ===== Table View ===== */
 .table-view {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-sm;
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6px;
 }
 
 .table-view .column-header-background {
-    -fx-background-color: -surface-variant;
-    -fx-background-radius: -radius-lg -radius-lg 0 0;
+    -fx-background-color: #f1f5f9;
 }
 
-.table-view .column-header {
-    -fx-background-color: transparent;
-    -fx-padding: 12 16;
-    -fx-text-fill: -text-primary;
-    -fx-font-weight: 600;
-    -fx-font-size: -font-size-sm;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 1 1 0;
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
 }
 
-.table-view .column-header:last-child {
-    -fx-border-width: 0 0 1 0;
+.table-row-cell:selected {
+    -fx-background-color: #dbeafe;
 }
 
-.table-view .table-cell {
-    -fx-padding: 8 16;
-    -fx-text-fill: -text-primary;
-    -fx-font-size: -font-size-sm;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 0 1 0;
-}
-
-.table-view .table-row-cell {
-    -fx-background-color: -surface;
-    -fx-border-color: transparent;
-}
-
-.table-view .table-row-cell:hover {
-    -fx-background-color: -surface-hover;
-}
-
-.table-view .table-row-cell:selected {
-    -fx-background-color: -primary-lightest;
-    -fx-text-fill: -primary-color;
-}
-
-/* Table Cell Types */
-.table-cell.null-cell {
-    -fx-text-fill: -text-tertiary;
-    -fx-font-style: italic;
-}
-
-.table-cell.number-cell {
-    -fx-text-fill: -info-color;
-    -fx-alignment: center-right;
-    -fx-font-family: -font-family-mono;
-}
-
-.table-cell.text-cell {
-    -fx-text-fill: -text-primary;
-}
-
-/* ===== TREE VIEW STYLING ===== */
+/* ===== Tree View ===== */
 .tree-view {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-sm;
-}
-
-.tree-cell {
-    -fx-padding: 8 12;
-    -fx-background-color: transparent;
-    -fx-text-fill: -text-primary;
-    -fx-font-size: -font-size-sm;
-    -fx-background-radius: -radius-md;
-}
-
-.tree-cell:hover {
-    -fx-background-color: -surface-hover;
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6px;
 }
 
 .tree-cell:selected {
-    -fx-background-color: -primary-lightest;
-    -fx-text-fill: -primary-color;
-    -fx-font-weight: 500;
+    -fx-background-color: #dbeafe;
 }
 
-/* Topic Tree Specific */
-.tree-cell.category-item {
-    -fx-font-weight: 600;
-    -fx-text-fill: -text-primary;
-}
-
-.tree-cell.topic-item {
-    -fx-padding: 6 12 6 24;
-    -fx-text-fill: -text-secondary;
-}
-
-.tree-cell.viewed-topic {
-    -fx-text-fill: -success-color;
-}
-
-.tree-cell.unviewed-topic {
-    -fx-text-fill: -text-tertiary;
-}
-
-/* ===== LIST VIEW STYLING ===== */
+/* ===== List View ===== */
 .list-view {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-sm;
-}
-
-.list-cell {
-    -fx-padding: 10 16;
-    -fx-background-color: transparent;
-    -fx-text-fill: -text-primary;
-    -fx-font-size: -font-size-sm;
-    -fx-background-radius: -radius-md;
-}
-
-.list-cell:hover {
-    -fx-background-color: -surface-hover;
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6px;
 }
 
 .list-cell:selected {
-    -fx-background-color: -primary-lightest;
-    -fx-text-fill: -primary-color;
-    -fx-font-weight: 500;
+    -fx-background-color: #dbeafe;
 }
 
-/* Questions List Specific */
-.questions-list .list-cell {
-    -fx-padding: 12 16;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 0 1 0;
-}
-
-.questions-list .list-cell:last-child {
-    -fx-border-width: 0;
-}
-
-/* ===== FORM CONTROLS ===== */
-.text-field, .text-area {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-md;
-    -fx-background-radius: -radius-md;
-    -fx-padding: 8 12;
-    -fx-text-fill: -text-primary;
-    -fx-font-size: -font-size-sm;
-    -fx-prompt-text-fill: -text-tertiary;
-}
-
-.text-field:focused, .text-area:focused {
-    -fx-border-color: -border-focus;
-    -fx-border-width: 2;
-    -fx-effect: -shadow-sm;
-}
-
+/* ===== TextField & ComboBox ===== */
+.text-field,
 .combo-box {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-md;
-    -fx-background-radius: -radius-md;
-    -fx-padding: 8 12;
-    -fx-text-fill: -text-primary;
-    -fx-font-size: -font-size-sm;
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px;
 }
 
-.combo-box:hover {
-    -fx-border-color: -text-tertiary;
-}
-
+.text-field:focused,
 .combo-box:focused {
-    -fx-border-color: -border-focus;
-    -fx-border-width: 2;
+    -fx-border-color: #2563eb;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.3), 4, 0, 0, 1);
 }
 
-/* Radio Buttons and Checkboxes */
-.radio-button, .check-box {
-    -fx-text-fill: -text-primary;
-    -fx-font-size: -font-size-sm;
-}
-
-.radio-button .radio, .check-box .box {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-full;
-    -fx-background-radius: -radius-full;
-}
-
-.radio-button:selected .radio, .check-box:selected .box {
-    -fx-background-color: -primary-color;
-    -fx-border-color: -primary-color;
-}
-
-/* ===== TOOLBAR STYLING ===== */
-.tool-bar {
-    -fx-background-color: -surface-variant;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 0 1 0;
-    -fx-padding: 8 16;
-    -fx-spacing: 8;
-}
-
-.execution-toolbar {
-    -fx-background-color: -surface;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-sm;
-    -fx-padding: 12 16;
-}
-
-.learning-navigation {
-    -fx-background-color: transparent;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 0 1 0;
-}
-
-/* ===== PROGRESS INDICATORS ===== */
-.progress-bar {
-    -fx-background-color: -surface-variant;
-    -fx-background-radius: -radius-full;
-    -fx-padding: 4;
-}
-
-.progress-bar .bar {
-    -fx-background-color: -primary-color;
-    -fx-background-radius: -radius-full;
-    -fx-background-insets: 0;
-    -fx-border-radius: -radius-full;
-    -fx-effect: dropshadow(gaussian, -primary-color, 4, 0, 0, 0);
-}
-
-.progress-indicator {
-    -fx-progress-color: -primary-color;
-}
-
-/* ===== LABELS AND TEXT ===== */
-.label {
-    -fx-text-fill: -text-primary;
-    -fx-font-size: -font-size-sm;
-}
-
-.section-title {
-    -fx-font-size: -font-size-lg;
-    -fx-font-weight: 700;
-    -fx-text-fill: -text-primary;
-}
-
-.subsection-title {
-    -fx-font-size: -font-size-base;
-    -fx-font-weight: 600;
-    -fx-text-fill: -text-secondary;
-}
-
-.panel-title {
-    -fx-font-size: -font-size-lg;
-    -fx-font-weight: 600;
-    -fx-text-fill: -text-primary;
-}
-
-/* Status and Meta Information */
-.status-text {
-    -fx-text-fill: -text-secondary;
-    -fx-font-size: -font-size-sm;
-}
-
-.user-info, .connection-info, .version-info {
-    -fx-text-fill: -text-tertiary;
-    -fx-font-size: -font-size-xs;
-}
-
-.execution-time {
-    -fx-text-fill: -info-color;
-    -fx-font-family: -font-family-mono;
-    -fx-font-size: -font-size-xs;
-}
-
-/* Difficulty Badges */
-.difficulty-badge {
-    -fx-background-color: -surface-variant;
-    -fx-text-fill: -text-secondary;
-    -fx-padding: 4 8;
-    -fx-background-radius: -radius-md;
-    -fx-font-size: -font-size-xs;
-    -fx-font-weight: 500;
-}
-
-/* Statistics */
-.statistics-text {
-    -fx-text-fill: -text-secondary;
-    -fx-font-size: -font-size-sm;
-    -fx-font-family: -font-family-mono;
-}
-
-.progress-text {
-    -fx-text-fill: -text-tertiary;
-    -fx-font-size: -font-size-xs;
-}
-
-/* ===== SPECIFIC COMPONENT STYLING ===== */
-
-/* Learning Panel */
-.learning-panel {
-    -fx-background-color: -background-primary;
-    -fx-padding: 16;
-}
-
-.learning-sidebar {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 1 0 0;
-    -fx-padding: 16;
-}
-
-.learning-content {
-    -fx-background-color: -background-primary;
-    -fx-padding: 16;
-}
-
-/* Practice Panel */
-.practice-layout {
-    -fx-background-color: -background-primary;
-}
-
-.practice-sidebar {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 1 0 0;
-    -fx-padding: 16;
-}
-
-.practice-center {
-    -fx-background-color: -background-primary;
-    -fx-padding: 16;
-}
-
-.practice-bottom {
-    -fx-background-color: -surface-variant;
-    -fx-border-color: -border-color;
-    -fx-border-width: 1 0 0 0;
-    -fx-padding: 16;
-}
-
-/* Question Display */
-.question-header {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-padding: 12 16;
-    -fx-effect: -shadow-sm;
-}
-
-.question-title {
-    -fx-font-size: -font-size-lg;
-    -fx-font-weight: 600;
-    -fx-text-fill: -text-primary;
-    -fx-wrap-text: true;
-}
-
-.question-description {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-sm;
-}
-
-/* Results Panel */
-.results-panel {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-sm;
-}
-
-.results-summary-bar {
-    -fx-background-color: -surface-variant;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 0 1 0;
-    -fx-border-radius: -radius-lg -radius-lg 0 0;
-    -fx-background-radius: -radius-lg -radius-lg 0 0;
-}
-
-.results-summary {
-    -fx-font-weight: 500;
-    -fx-font-size: -font-size-sm;
-}
-
-.results-summary.success {
-    -fx-text-fill: -success-color;
-}
-
-.results-summary.error {
-    -fx-text-fill: -danger-color;
-}
-
-.results-summary.warning {
-    -fx-text-fill: -warning-color;
-}
-
-.results-summary.info {
-    -fx-text-fill: -info-color;
-}
-
-/* Database Browser */
-.database-browser {
-    -fx-background-color: -background-primary;
-}
-
-.tables-panel {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-width: 0 1 0 0;
-}
-
-.details-tabs {
-    -fx-background-color: -background-primary;
-}
-
-.table-cell {
-    -fx-padding: 12 16;
-    -fx-background-radius: -radius-md;
-}
-
-.stats-area, .messages-area, .table-info-area {
-    -fx-background-color: -surface-variant;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-md;
-    -fx-background-radius: -radius-md;
-    -fx-padding: 12;
-    -fx-font-family: -font-family-mono;
-    -fx-font-size: -font-size-sm;
-}
-
-/* Status Bars */
-.status-bar, .db-status-bar {
-    -fx-background-color: -surface-variant;
-    -fx-border-color: -border-color;
-    -fx-border-width: 1 0 0 0;
-    -fx-font-size: -font-size-xs;
-}
-
-/* Progress Section */
-.progress-section {
-    -fx-background-color: -surface-variant;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-padding: 16;
-}
-
-.learning-progress {
-    -fx-accent: -success-color;
-}
-
-/* ===== DIALOG STYLING ===== */
+/* ===== Dialogs ===== */
 .dialog-pane {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-xl;
-    -fx-background-radius: -radius-xl;
-    -fx-effect: -shadow-2xl;
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
 }
 
-.dialog-pane .header-panel {
-    -fx-background-color: -primary-color;
-    -fx-text-fill: -text-inverse;
-    -fx-background-radius: -radius-xl -radius-xl 0 0;
-    -fx-padding: 20;
+/* ===== Tooltip ===== */
+.tooltip {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: white;
+    -fx-padding: 6px 10px;
+    -fx-background-radius: 4px;
+    -fx-font-size: 12px;
 }
 
-.dialog-pane .content {
-    -fx-padding: 20;
+/* ===== Progress Bar ===== */
+.progress-bar {
+    -fx-accent: #2563eb;
 }
 
-.dialog-pane .button-bar {
-    -fx-padding: 0 20 20 20;
-}
-
-/* Alert Dialogs */
-.alert {
-    -fx-background-color: -surface;
-}
-
-.alert .header-panel {
-    -fx-background-color: -info-color;
-}
-
-.alert.information .header-panel {
-    -fx-background-color: -info-color;
-}
-
-.alert.warning .header-panel {
-    -fx-background-color: -warning-color;
-}
-
-.alert.error .header-panel {
-    -fx-background-color: -danger-color;
-}
-
-.alert.confirmation .header-panel {
-    -fx-background-color: -primary-color;
-}
-
-/* ===== SCROLL BARS ===== */
-.scroll-bar {
+/* ===== Scroll Bar ===== */
+.scroll-bar:vertical {
     -fx-background-color: transparent;
 }
 
-.scroll-bar .track {
-    -fx-background-color: -surface-variant;
-    -fx-background-radius: -radius-full;
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 4px;
 }
 
-.scroll-bar .thumb {
-    -fx-background-color: -text-quaternary;
-    -fx-background-radius: -radius-full;
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
 }
 
-.scroll-bar .thumb:hover {
-    -fx-background-color: -text-tertiary;
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
 }
 
-.scroll-bar .thumb:pressed {
-    -fx-background-color: -text-secondary;
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 4px;
 }
 
-/* ===== CONTEXT MENUS ===== */
-.context-menu {
-    -fx-background-color: -surface;
-    -fx-border-color: -border-color;
-    -fx-border-radius: -radius-lg;
-    -fx-background-radius: -radius-lg;
-    -fx-effect: -shadow-lg;
-    -fx-padding: 8;
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #94a3b8;
 }
-
-.context-menu .separator {
-    -fx-padding: 4 0;
-}
-
-.context-menu .separator .line {
-    -fx-border-color: -border-color;
-    -fx-border-width: 1 0 0 0;
-}
-
-/* ===== TOOLTIPS ===== */
-.tooltip {
-    -fx-background-color: -text-primary;
-    -fx-text-fill: -text-inverse;
-    -fx-background-radius: -radius-md;
-    -fx-padding: 8 12;
-    -fx-font-size: -font-size-xs;
-    -fx-effect: -shadow-lg;
-}
-
-/* ===== ANIMATIONS AND TRANSITIONS ===== */
-.button, .list-cell, .tree-cell, .table-row-cell {
-    -fx-transition: all -transition-fast;
-}
-
-/* Hover Effects */
-.button:hover, .list-cell:hover, .tree-cell:hover {
-    -fx-cursor: hand;
-}
-
-/* ===== RESPONSIVE DESIGN UTILITIES ===== */
-.hide-on-small {
-    -fx-visible: true;
-}
-
-.show-on-small {
-    -fx-visible: false;
-}
-
-/* ===== ACCESSIBILITY ===== */
-.button:focused, .text-field:focused, .combo-box:focused {
-    -fx-effect: dropshadow(gaussian, -border-focus, 3, 0, 0, 0);
-}
-
-/* High Contrast Support */
-@media (prefers-contrast: high) {
-    .root {
-        -border-color: #000000;
-        -text-primary: #000000;
-        -background-primary: #ffffff;
-    }
-}
-
-/* ===== PRINT STYLES ===== */
-@media print {
-    .tool-bar, .menu-bar, .button {
-        -fx-visible: false;
-    }
-
-    .main-window {
-        -fx-background-color: white;
-    }
-}
-
-/* ===== CUSTOM PROPERTIES FOR SithuHan-SithuHan ===== */
-.user-branded {
-    -fx-border-color: -primary-color;
-    -fx-border-width: 2;
-}
-
-.github-link {
-    -fx-text-fill: -text-link;
-    -fx-underline: true;
-    -fx-cursor: hand;
-}
-
-.timestamp {
-    -fx-text-fill: -text-tertiary;
-    -fx-font-family: -font-family-mono;
-    -fx-font-size: -font-size-xs;
-}
-
-/* Repository Indicator */
-.repo-indicator {
-    -fx-background-color: -primary-lightest;
-    -fx-text-fill: -primary-color;
-    -fx-padding: 4 8;
-    -fx-background-radius: -radius-md;
-    -fx-font-size: -font-size-xs;
-    -fx-font-weight: 500;
-}
-
-/* Last Updated: 2025-09-26 05:07:16 UTC by SithuHan-SithuHan */

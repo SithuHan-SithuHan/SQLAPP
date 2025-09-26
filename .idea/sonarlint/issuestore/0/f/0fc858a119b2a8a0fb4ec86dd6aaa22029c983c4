@@ -1,0 +1,35 @@
+
+j
+java:S1192¢"GDefine a constant instead of duplicating this literal "medium" 3 times.(£º€šøÿÿÿÿ8²ÛÖ£˜3
+j
+java:S1192¬"LDefine a constant instead of duplicating this literal "Empty Query" 3 times.(Ã¾ŒÜ8²ÛÖ£˜3
+r
+java:S1192˜"TDefine a constant instead of duplicating this literal "Execution time: 0ms" 3 times.(á—±ë8²ÛÖ£˜3
+q
+java:S1192É"NDefine a constant instead of duplicating this literal "section-title" 3 times.(áÏØøÿÿÿÿ8²ÛÖ£˜3
+€
+java:S1450Y"cRemove the "currentQuestionIndex" field and declare it as a local variable in the relevant methods.( Š­¥8ÚÛÖ£˜3
+r
+java:S1450/"VRemove the "menuBar" field and declare it as a local variable in the relevant methods.(“Æo8ÛÛÖ£˜3
+{
+java:S1450S"^Remove the "progressTracker" field and declare it as a local variable in the relevant methods.(’àü±8ÛÛÖ£˜3
+
+java:S1450Z"]Remove the "queryStartTime" field and declare it as a local variable in the relevant methods.(Ó÷äıÿÿÿÿ8ÛÛÖ£˜3
+`
+java:S1854ù"=Remove this useless assignment to local variable "topicMeta".(Ó€âÎüÿÿÿÿ8óÛÖ£˜3
+Q
+java:S1481ù".Remove this unused "topicMeta" local variable.(Ó€âÎüÿÿÿÿ8ùÛÖ£˜3
+O
+java:S1602ú",Remove useless curly braces around statement(¡ÍÉıÿÿÿÿ8ƒÜÖ£˜3
+[
+java:S1117â"8Rename "root" which hides the field declared at line 45.(•—Âúÿÿÿÿ8‡ÜÖ£˜3
+N
+java:S1481¸"+Remove this unused "result" local variable.(é±ûÛşÿÿÿÿ8’ÜÖ£˜3
+t
+java:S3457´"Q%n should be used in place of \n to produce the platform-specific line separator.(ä¯Œ³üÿÿÿÿ8–ÜÖ£˜3
+P
+java:S6126Ã	"2Replace this String concatenation with Text block.(‚—Õ‰8œÜÖ£˜3
+P
+java:S6126Ğ	"2Replace this String concatenation with Text block.(éŒ‘¸8œÜÖ£˜3
+P
+java:S1068S"3Remove this unused "progressTracker" private field.(’àü±8¢ÜÖ£˜3

@@ -873,60 +873,63 @@ public class MainWindow {
     }
 
     private String createQuestionHTML(String content) {
-        return """
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <style>
-                body { 
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                    margin: 0; 
-                    padding: 16px;
-                    background-color: white;
-                    color: #0f172a;
-                    line-height: 1.6;
-                    font-size: 14px;
-                }
-                h3 { color: #2563eb; margin-bottom: 16px; font-size: 18px; }
-                h4 { color: #059669; margin-top: 24px; margin-bottom: 12px; font-size: 16px; }
-                h5 { color: #d97706; margin-top: 16px; margin-bottom: 8px; font-size: 14px; }
-                p { margin-bottom: 12px; }
-                code { 
-                    background-color: #f1f5f9; 
-                    padding: 2px 6px; 
-                    border-radius: 4px; 
-                    font-family: 'Monaco', 'Consolas', monospace;
-                    font-size: 13px;
-                }
-                table { 
-                    border-collapse: collapse; 
-                    width: 100%; 
-                    margin: 16px 0; 
-                    border: 2px solid #e2e8f0;
-                    font-size: 13px;
-                }
-                th { 
-                    background-color: #f8fafc; 
-                    border: 1px solid #cbd5e1; 
-                    padding: 10px; 
-                    text-align: left; 
-                    font-weight: 600;
-                }
-                td { 
-                    border: 1px solid #cbd5e1; 
-                    padding: 8px;
-                }
-                tr:nth-child(even) { 
-                    background-color: #f8fafc;
-                }
-            </style>
-        </head>
-        <body>
-        %s
-        </body>
-        </html>
-        """.formatted(content);
+        String template = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body { 
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                margin: 0; 
+                padding: 16px;
+                background-color: white;
+                color: #0f172a;
+                line-height: 1.6;
+                font-size: 14px;
+            }
+            h3 { color: #2563eb; margin-bottom: 16px; font-size: 18px; }
+            h4 { color: #059669; margin-top: 24px; margin-bottom: 12px; font-size: 16px; }
+            h5 { color: #d97706; margin-top: 16px; margin-bottom: 8px; font-size: 14px; }
+            p { margin-bottom: 12px; }
+            code { 
+                background-color: #f1f5f9; 
+                padding: 2px 6px; 
+                border-radius: 4px; 
+                font-family: 'Monaco', 'Consolas', monospace;
+                font-size: 13px;
+            }
+            table { 
+                border-collapse: collapse; 
+                width: 100%; 
+                margin: 16px 0; 
+                border: 2px solid #e2e8f0;
+                font-size: 13px;
+            }
+            th { 
+                background-color: #f8fafc; 
+                border: 1px solid #cbd5e1; 
+                padding: 10px; 
+                text-align: left; 
+                font-weight: 600;
+            }
+            td { 
+                border: 1px solid #cbd5e1; 
+                padding: 8px;
+            }
+            tr:nth-child(even) { 
+                background-color: #f8fafc;
+            }
+        </style>
+    </head>
+    <body>
+    CONTENT_PLACEHOLDER
+    </body>
+    </html>
+    """;
+
+        // Safe replacement without format interpretation
+        return template.replace("CONTENT_PLACEHOLDER", content);
     }
 
     // ===== SQL EXECUTION METHODS (PRESERVING YOUR ORIGINAL LOGIC) =====

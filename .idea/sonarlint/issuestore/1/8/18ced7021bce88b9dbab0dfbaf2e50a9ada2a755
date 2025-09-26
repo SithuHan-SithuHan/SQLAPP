@@ -1,0 +1,67 @@
+
+e
+java:S1192~"HDefine a constant instead of duplicating this literal "#059669" 4 times.(Ğ—ÒÁ8ÑÚÖ£˜3
+c
+java:S11928"FDefine a constant instead of duplicating this literal "Arial" 8 times.(‰ÁÇ±8ÑÚÖ£˜3
+k
+java:S1192‚"HDefine a constant instead of duplicating this literal "#dc2626" 4 times.(‚½ú¤øÿÿÿÿ8ÑÚÖ£˜3
+k
+java:S1192†"HDefine a constant instead of duplicating this literal "#d97706" 4 times.(©ŞıÔøÿÿÿÿ8ÑÚÖ£˜3
+f
+java:S1192"HDefine a constant instead of duplicating this literal "#6b7280" 3 times.(İ¸ìÔ8ÑÚÖ£˜3
+g
+java:S21844"ECast one of the operands of this subtraction operation to a "double".(’•œıÿÿÿÿ8ÒÚÖ£˜3
+g
+java:S21844"ECast one of the operands of this subtraction operation to a "double".(’•œıÿÿÿÿ8ÒÚÖ£˜3
+h
+java:S2184˜"ECast one of the operands of this subtraction operation to a "double".(À¡ÿÿÿÿÿ8ÓÚÖ£˜3
+h
+java:S2184˜"ECast one of the operands of this subtraction operation to a "double".(À¡ÿÿÿÿÿ8ÓÚÖ£˜3
+c
+java:S2184"ECast one of the operands of this subtraction operation to a "double".(¬Ş¬Œ8ÓÚÖ£˜3
+c
+java:S2184"ECast one of the operands of this subtraction operation to a "double".(¬Ş¬Œ8ÓÚÖ£˜3
+h
+java:S2184‘"ECast one of the operands of this subtraction operation to a "double".(Åªò×ûÿÿÿÿ8ÓÚÖ£˜3
+h
+java:S2184‘"ECast one of the operands of this subtraction operation to a "double".(Åªò×ûÿÿÿÿ8ÓÚÖ£˜3
+h
+java:S2184«"ECast one of the operands of this subtraction operation to a "double".(À¡ÿÿÿÿÿ8ÓÚÖ£˜3
+h
+java:S2184«"ECast one of the operands of this subtraction operation to a "double".(À¡ÿÿÿÿÿ8ÓÚÖ£˜3
+c
+java:S2184º"ECast one of the operands of this subtraction operation to a "double".(Ş•¯‡8ÓÚÖ£˜3
+c
+java:S2184º"ECast one of the operands of this subtraction operation to a "double".(Ş•¯‡8ÓÚÖ£˜3
+c
+java:S2184æ"ECast one of the operands of this subtraction operation to a "double".(šÄÖ8ÓÚÖ£˜3
+c
+java:S2184æ"ECast one of the operands of this subtraction operation to a "double".(šÄÖ8ÓÚÖ£˜3
+W
+java:S1854»"9Remove this useless assignment to local variable "emoji".(Ô€ã¦8äÚÖ£˜3
+W
+java:S1854¿"9Remove this useless assignment to local variable "emoji".(­ß†Ú8äÚÖ£˜3
+\
+java:S1854Ã"9Remove this useless assignment to local variable "emoji".(üÓ¥¤üÿÿÿÿ8äÚÖ£˜3
+W
+java:S1854Ç"9Remove this useless assignment to local variable "emoji".(½£“ç8äÚÖ£˜3
+W
+java:S1854Ë"9Remove this useless assignment to local variable "emoji".(¨±º§8äÚÖ£˜3
+H
+java:S1481¶"*Remove this unused "emoji" local variable.(ûÉçö8åÚÖ£˜3
+X
+java:S1854ó":Remove this useless assignment to local variable "symbol".(Ó£ãï8æÚÖ£˜3
+]
+java:S1854÷":Remove this useless assignment to local variable "symbol".(şÒ¤ªüÿÿÿÿ8çÚÖ£˜3
+]
+java:S1854û":Remove this useless assignment to local variable "symbol".(õš£±üÿÿÿÿ8çÚÖ£˜3
+]
+java:S1854ÿ":Remove this useless assignment to local variable "symbol".(ª®‰ùüÿÿÿÿ8çÚÖ£˜3
+]
+java:S1854ƒ":Remove this useless assignment to local variable "symbol".(°É²ìüÿÿÿÿ8çÚÖ£˜3
+X
+java:S1854‡":Remove this useless assignment to local variable "symbol".(¦ûõæ8çÚÖ£˜3
+I
+java:S1481î"+Remove this unused "symbol" local variable.(ÄŞŒ¨8çÚÖ£˜3
+N
+java:S1068",Remove this unused "APP_NAME" private field.( ëâûÿÿÿÿ8íÚÖ£˜3

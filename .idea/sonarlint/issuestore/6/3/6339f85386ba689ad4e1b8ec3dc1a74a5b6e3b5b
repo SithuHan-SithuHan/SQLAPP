@@ -1,0 +1,26 @@
+
+M
+java:S1066‚"/Merge this if statement with the enclosing one.(œ­“µ8Üó¨¦˜3
+w
+java:S1450K"ZRemove the "contextMenu" field and declare it as a local variable in the relevant methods.( ÎÁ¦8Âö¨¦˜3
+i
+java:S5998A"LRefactor this repetition that can lead to a stack overflow for large inputs.(Ãæ„™8Îö¨¦˜3
+n
+java:S5998D"LRefactor this repetition that can lead to a stack overflow for large inputs.(İ¾İüÿÿÿÿ8Ğö¨¦˜3
+_
+java:S6353H"CUse concise character class syntax '\\w' instead of '[A-Za-z0-9_]'.(­·Ö\8Ôö¨¦˜3
+T
+java:S6126g"2Replace this String concatenation with Text block.(ÊÍƒÿÿÿÿÿ8Şö¨¦˜3
+H	java:S106š"+Replace this use of System.err by a logger.(Çğº™8ëö¨¦˜3
+p
+java:S3776Ô"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Åú°´8õö¨¦˜3
+_
+java:S1854«"<Remove this useless assignment to local variable "caretPos".(¾ÒÔøÿÿÿÿ8†÷¨¦˜3
+P
+java:S1481«"-Remove this unused "caretPos" local variable.(¾ÒÔøÿÿÿÿ8‡÷¨¦˜3
+]
+java:S1161Ï":Add the "@Override" annotation above this method signature(¹Ïƒıÿÿÿÿ8–÷¨¦˜3
+Q
+java:S1128"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ8™÷¨¦˜3
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8™÷¨¦˜3

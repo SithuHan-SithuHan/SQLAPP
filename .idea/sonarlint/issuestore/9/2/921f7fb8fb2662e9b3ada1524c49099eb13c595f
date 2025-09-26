@@ -1,0 +1,16 @@
+
+d
+java:S1192?"HDefine a constant instead of duplicating this literal "nav-btn" 3 times.(¾¢Ş98³ÕÖ£˜3
+k
+java:S1192V"IDefine a constant instead of duplicating this literal "zoom-btn" 3 times.(¾‹šÃùÿÿÿÿ8³ÕÖ£˜3
+x
+java:S1450"VRemove the "toolbar" field and declare it as a local variable in the relevant methods.(¾é¡›ıÿÿÿÿ8ÅÕÖ£˜3
+]
+java:S1117:";Rename "toolbar" which hides the field declared at line 22.(ò£–ºûÿÿÿÿ8ÊÕÖ£˜3
+{	java:S131š"YComplete cases by adding the missing enum constants or add a default case to this switch.(³ÒÂŒÿÿÿÿÿ8ĞÕÖ£˜3
+O
+java:S1602°",Remove useless curly braces around statement(×µ™¿ûÿÿÿÿ8ÑÕÖ£˜3
+W
+java:S3400Ÿ"9Remove this method and declare a constant for this value.(œúê¦8ÓÕÖ£˜3
+W
+java:S3400À"9Remove this method and declare a constant for this value.(œúê¦8ÚÕÖ£˜3

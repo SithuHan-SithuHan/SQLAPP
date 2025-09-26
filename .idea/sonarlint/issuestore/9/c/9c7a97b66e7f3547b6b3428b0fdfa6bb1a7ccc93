@@ -1,0 +1,25 @@
+
+o
+java:S1192·"LDefine a constant instead of duplicating this literal "number-cell" 3 times.(ü¦Á„üÿÿÿÿ8ùÎÖ£˜3
+m
+java:S1192·"JDefine a constant instead of duplicating this literal "text-cell" 3 times.(ü¦Á„üÿÿÿÿ8ùÎÖ£˜3
+m
+java:S1192·"JDefine a constant instead of duplicating this literal "null-cell" 3 times.(ü¦Á„üÿÿÿÿ8ùÎÖ£˜3
+k
+java:S1192Ö"HDefine a constant instead of duplicating this literal "warning" 5 times.(Ä¡¸ñúÿÿÿÿ8ùÎÖ£˜3
+k
+java:S1192Ö"HDefine a constant instead of duplicating this literal "success" 7 times.(Ä¡¸ñúÿÿÿÿ8ùÎÖ£˜3
+g
+java:S1192Ú"IDefine a constant instead of duplicating this literal "HH:mm:ss" 3 times.(‡şğ8ùÎÖ£˜3
+i
+java:S1192×"FDefine a constant instead of duplicating this literal "error" 7 times.(äí“Üûÿÿÿÿ8ùÎÖ£˜3
+c
+java:S1874k"ARemove this use of "CONSTRAINED_RESIZE_POLICY"; it is deprecated.(Œ±¨åøÿÿÿÿ8õÏÖ£˜3
+o
+java:S3457Ü"Q%n should be used in place of \n to produce the platform-specific line separator.(Àì¤¦8ÿÏÖ£˜3
+t
+java:S3457ô"Q%n should be used in place of \n to produce the platform-specific line separator.(›üÈèùÿÿÿÿ8ĞÖ£˜3
+u
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(¥½†¤ùÿÿÿÿ8ƒĞÖ£˜3
+t
+java:S3457½"Q%n should be used in place of \n to produce the platform-specific line separator.(¢Ÿã®úÿÿÿÿ8•ĞÖ£˜3

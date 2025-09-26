@@ -1,7 +1,7 @@
 {
   "userId" : "default_user",
   "completedQuestions" : [ ],
-  "viewedTopics" : [ ],
+  "viewedTopics" : [ "Introduction to DDL" ],
   "questionAttempts" : { },
   "lastAttempted" : { },
   "statistics" : {
@@ -22,6 +22,6 @@
     "nextLevelXP" : 2000,
     "levelProgress" : -100.0
   },
-  "lastUpdated" : "2025-09-26 14:08:31",
+  "lastUpdated" : "2025-09-26 14:28:48",
   "completionPercentage" : 0.0
 }

@@ -1,0 +1,8 @@
+
+{
+java:S1450"YRemove the "mainWindow" field and declare it as a local variable in the relevant methods.(æÜÜÿúÿÿÿÿ8¡ù¨¦˜3
+€
+java:S1450"^Remove the "progressManager" field and declare it as a local variable in the relevant methods.(ÖùÎ’øÿÿÿÿ8¢ù¨¦˜3
+~
+java:S1450"\Remove the "queryExecutor" field and declare it as a local variable in the relevant methods.(¬Îá¸úÿÿÿÿ8¢ù¨¦˜3
+G	java:S106–"+Replace this use of System.err by a logger.(é™Í28Áù¨¦˜3

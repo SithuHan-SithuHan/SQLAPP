@@ -34,4 +34,6 @@ module com.sqllearningapp {
     exports com.sqllearningapp;
     exports com.sqllearningapp.core.models;
     exports com.sqllearningapp.core.services;
+
+    opens com.sqllearningapp.utils to com.fasterxml.jackson.databind;
 }

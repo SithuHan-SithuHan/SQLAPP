@@ -1,0 +1,95 @@
+
+m
+java:S1192-"KDefine a constant instead of duplicating this literal "DROP TABLE" 5 times.(õ³Õ°ýÿÿÿÿ8ÃÑÖ£˜3
+u
+java:S1192H"XDefine a constant instead of duplicating this literal "Third Normal Form (3NF)" 5 times.(±¦Ð‘8ÃÑÖ£˜3
+m
+java:S11927"KDefine a constant instead of duplicating this literal "Subqueries" 4 times.(‹¸·‘üÿÿÿÿ8ÃÑÖ£˜3
+n
+java:S1192,"LDefine a constant instead of duplicating this literal "ALTER TABLE" 5 times.(©§Øûúÿÿÿÿ8ÃÑÖ£˜3
+c
+java:S11926"FDefine a constant instead of duplicating this literal "Joins" 5 times.(’ü–à8ÃÑÖ£˜3
+y
+java:S1192E"WDefine a constant instead of duplicating this literal "Database Normalization" 6 times.(¬ÚÃÔÿÿÿÿÿ8ÄÑÖ£˜3
+z
+java:S1192F"XDefine a constant instead of duplicating this literal "First Normal Form (1NF)" 5 times.(½ãÍ´þÿÿÿÿ8ÄÑÖ£˜3
+s
+java:S11925"QDefine a constant instead of duplicating this literal "DELETE Statement" 5 times.(÷›˜¨úÿÿÿÿ8ÄÑÖ£˜3
+s
+java:S11923"QDefine a constant instead of duplicating this literal "INSERT Statement" 5 times.(Ú·ˆ”øÿÿÿÿ8ÄÑÖ£˜3
+s
+java:S11922"QDefine a constant instead of duplicating this literal "SELECT Statement" 5 times.(§ã…žøÿÿÿÿ8ÄÑÖ£˜3
+m
+java:S1192;"PDefine a constant instead of duplicating this literal "GRANT Statement" 5 times.(™‘±ƒ8ÄÑÖ£˜3
+q
+java:S1192:"TDefine a constant instead of duplicating this literal "Introduction to DCL" 5 times.(¡ß¤×8ÄÑÖ£˜3
+q
+java:S1192?"TDefine a constant instead of duplicating this literal "Introduction to TCL" 5 times.(ÙãÓ¢8ÄÑÖ£˜3
+v
+java:S1192G"YDefine a constant instead of duplicating this literal "Second Normal Form (2NF)" 5 times.(´«÷¡8ÄÑÖ£˜3
+n
+java:S1192."LDefine a constant instead of duplicating this literal "Constraints" 4 times.(ßäôïûÿÿÿÿ8ÄÑÖ£˜3
+o
+java:S1192+"MDefine a constant instead of duplicating this literal "CREATE TABLE" 5 times.(ÑàÖôøÿÿÿÿ8ÄÑÖ£˜3
+v
+java:S11921"TDefine a constant instead of duplicating this literal "Introduction to DML" 5 times.(ÊóëÇøÿÿÿÿ8ÄÑÖ£˜3
+n
+java:S11924"QDefine a constant instead of duplicating this literal "UPDATE Statement" 5 times.(ìÏéÈ8ÄÑÖ£˜3
+k
+java:S1192A"IDefine a constant instead of duplicating this literal "ROLLBACK" 5 times.(¨†©·úÿÿÿÿ8ÄÑÖ£˜3
+s
+java:S1192<"QDefine a constant instead of duplicating this literal "REVOKE Statement" 4 times.(Í“Àòùÿÿÿÿ8ÄÑÖ£˜3
+d
+java:S1192@"GDefine a constant instead of duplicating this literal "COMMIT" 5 times.(ÔîŒì8ÄÑÖ£˜3
+l
+java:S1192B"JDefine a constant instead of duplicating this literal "SAVEPOINT" 4 times.(ßíá•ÿÿÿÿÿ8ÄÑÖ£˜3
+v
+java:S1192*"TDefine a constant instead of duplicating this literal "Introduction to DDL" 5 times.(ÃÊÚøÿÿÿÿ8ÄÑÖ£˜3
+W
+java:S3400°"9Remove this method and declare a constant for this value.(œúê¦8»ÒÖ£˜3
+W
+java:S3400â"9Remove this method and declare a constant for this value.(œúê¦8»ÒÖ£˜3
+W
+java:S3400 "9Remove this method and declare a constant for this value.(œúê¦8¼ÒÖ£˜3
+W
+java:S3400Ñ"9Remove this method and declare a constant for this value.(œúê¦8½ÒÖ£˜3
+W
+java:S3400ƒ"9Remove this method and declare a constant for this value.(œúê¦8¾ÒÖ£˜3
+W
+java:S3400À"9Remove this method and declare a constant for this value.(œúê¦8¿ÒÖ£˜3
+W
+java:S3400à"9Remove this method and declare a constant for this value.(œúê¦8ÀÒÖ£˜3
+W
+java:S3400¯"9Remove this method and declare a constant for this value.(œúê¦8ÁÒÖ£˜3
+W
+java:S3400ë"9Remove this method and declare a constant for this value.(œúê¦8ÂÒÖ£˜3
+V
+java:S3400³"9Remove this method and declare a constant for this value.(¼Çé"8ÃÒÖ£˜3
+\
+java:S3400´"9Remove this method and declare a constant for this value.(ëžÜúÿÿÿÿ8ÃÒÖ£˜3
+\
+java:S3400µ"9Remove this method and declare a constant for this value.(ºò…¬üÿÿÿÿ8ÃÒÖ£˜3
+\
+java:S3400¶"9Remove this method and declare a constant for this value.(„ÖûŒùÿÿÿÿ8ÃÒÖ£˜3
+\
+java:S3400·"9Remove this method and declare a constant for this value.(™—ˆâúÿÿÿÿ8ÃÒÖ£˜3
+\
+java:S3400¸"9Remove this method and declare a constant for this value.(ÔÀ†¡ýÿÿÿÿ8ÃÒÖ£˜3
+\
+java:S3400¹"9Remove this method and declare a constant for this value.(äý¦öûÿÿÿÿ8ÃÒÖ£˜3
+V
+java:S3400º"9Remove this method and declare a constant for this value.(³Ì¾18ÄÒÖ£˜3
+W
+java:S3400»"9Remove this method and declare a constant for this value.(ûþ¾à8ÄÒÖ£˜3
+\
+java:S3400¼"9Remove this method and declare a constant for this value.(œùøÝüÿÿÿÿ8ÄÒÖ£˜3
+\
+java:S3400½"9Remove this method and declare a constant for this value.(ü¹×˜þÿÿÿÿ8ÄÒÖ£˜3
+\
+java:S3400¾"9Remove this method and declare a constant for this value.(çƒ÷‡úÿÿÿÿ8ÄÒÖ£˜3
+\
+java:S3400¿"9Remove this method and declare a constant for this value.(¬²ý¿ýÿÿÿÿ8ÄÒÖ£˜3
+\
+java:S3400À"9Remove this method and declare a constant for this value.(Ù´½ùøÿÿÿÿ8ÄÒÖ£˜3
+\
+java:S3400Á"9Remove this method and declare a constant for this value.(ðˆ¹–üÿÿÿÿ8ÄÒÖ£˜3
