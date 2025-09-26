@@ -36,7 +36,7 @@ CREATE TABLE employees (
                            employment_status VARCHAR(20) DEFAULT 'ACTIVE',
                            is_active BOOLEAN DEFAULT TRUE,
                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                           updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
                            FOREIGN KEY (department_id) REFERENCES departments(id),
                            FOREIGN KEY (manager_id) REFERENCES employees(id),
@@ -80,9 +80,7 @@ CREATE TABLE employee_projects (
                                    is_active BOOLEAN DEFAULT TRUE,
 
                                    FOREIGN KEY (employee_id) REFERENCES employees(id) ON DELETE CASCADE,
-                                   FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE,
-
-                                   UNIQUE KEY unique_employee_project (employee_id, project_id)
+                                   FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
 );
 
 -- Customers table
@@ -100,10 +98,7 @@ CREATE TABLE customers (
                            postal_code VARCHAR(10),
                            credit_limit DECIMAL(12,2) DEFAULT 0,
                            is_active BOOLEAN DEFAULT TRUE,
-                           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-                           INDEX idx_company_name (company_name),
-                           INDEX idx_city (city)
+                           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Orders table
@@ -125,10 +120,7 @@ CREATE TABLE orders (
                         FOREIGN KEY (customer_id) REFERENCES customers(id),
 
                         CONSTRAINT chk_order_status CHECK (status IN ('PENDING', 'PROCESSING', 'SHIPPED', 'DELIVERED', 'CANCELLED', 'RETURNED')),
-                        CONSTRAINT chk_order_priority CHECK (priority IN ('LOW', 'NORMAL', 'HIGH', 'URGENT')),
-
-                        INDEX idx_order_date (order_date),
-                        INDEX idx_status (status)
+                        CONSTRAINT chk_order_priority CHECK (priority IN ('LOW', 'NORMAL', 'HIGH', 'URGENT'))
 );
 
 -- Products table (for advanced exercises)
@@ -145,10 +137,7 @@ CREATE TABLE products (
                           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
                           CONSTRAINT chk_unit_price CHECK (unit_price >= 0),
-                          CONSTRAINT chk_stock CHECK (units_in_stock >= 0),
-
-                          INDEX idx_category (category),
-                          INDEX idx_product_name (product_name)
+                          CONSTRAINT chk_stock CHECK (units_in_stock >= 0)
 );
 
 -- Order Details (for complex JOIN exercises)
@@ -168,22 +157,6 @@ CREATE TABLE order_details (
                                CONSTRAINT chk_discount CHECK (discount >= 0 AND discount <= 1)
 );
 
--- Address table for normalization exercises
-CREATE TABLE addresses (
-                           id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                           entity_type VARCHAR(20) NOT NULL, -- 'EMPLOYEE', 'CUSTOMER', 'DEPARTMENT'
-                           entity_id INTEGER NOT NULL,
-                           address_type VARCHAR(20) DEFAULT 'PRIMARY', -- 'PRIMARY', 'BILLING', 'SHIPPING'
-                           street_address VARCHAR(200),
-                           city VARCHAR(50),
-                           state VARCHAR(50),
-                           postal_code VARCHAR(10),
-                           country VARCHAR(50) DEFAULT 'USA',
-                           is_active BOOLEAN DEFAULT TRUE,
-
-                           INDEX idx_entity (entity_type, entity_id)
-);
-
 -- Person table for JOIN exercises (matching your original questions)
 CREATE TABLE Person (
                         personId INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -191,13 +164,27 @@ CREATE TABLE Person (
                         firstName VARCHAR(50)
 );
 
--- Address table for JOIN exercises (matching your original questions)
+-- Address table for JOIN exercises (matching your original questions) - FIXED
 CREATE TABLE Address (
                          addressId INTEGER PRIMARY KEY AUTO_INCREMENT,
                          personId INTEGER,
                          city VARCHAR(50),
                          state VARCHAR(50),
                          FOREIGN KEY (personId) REFERENCES Person(personId)
+);
+
+-- Address table for normalization exercises (lowercase)
+CREATE TABLE addresses (
+                           id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                           entity_type VARCHAR(20) NOT NULL,
+                           entity_id INTEGER NOT NULL,
+                           address_type VARCHAR(20) DEFAULT 'PRIMARY',
+                           street_address VARCHAR(200),
+                           city VARCHAR(50),
+                           state VARCHAR(50),
+                           postal_code VARCHAR(10),
+                           country VARCHAR(50) DEFAULT 'USA',
+                           is_active BOOLEAN DEFAULT TRUE
 );
 
 -- Performance testing table (for advanced exercises)
@@ -209,45 +196,3 @@ CREATE TABLE performance_test (
                                   test_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                   user_id VARCHAR(100) DEFAULT 'SithuHan-SithuHan'
 );
-
--- Create indexes for better query performance
-CREATE INDEX idx_employees_department ON employees(department_id);
-CREATE INDEX idx_employees_manager ON employees(manager_id);
-CREATE INDEX idx_employees_hire_date ON employees(hire_date);
-CREATE INDEX idx_employees_salary ON employees(salary);
-CREATE INDEX idx_projects_department ON projects(department_id);
-CREATE INDEX idx_orders_customer ON orders(customer_id);
-CREATE INDEX idx_employee_projects_emp ON employee_projects(employee_id);
-CREATE INDEX idx_employee_projects_proj ON employee_projects(project_id);
-
--- Views for common queries
-CREATE VIEW employee_details AS
-SELECT
-    e.id,
-    e.employee_code,
-    CONCAT(e.first_name, ' ', e.last_name) AS full_name,
-    e.email,
-    e.salary,
-    e.hire_date,
-    d.department_name,
-    d.location as department_location,
-    CONCAT(m.first_name, ' ', m.last_name) AS manager_name
-FROM employees e
-         LEFT JOIN departments d ON e.department_id = d.id
-         LEFT JOIN employees m ON e.manager_id = m.id
-WHERE e.is_active = TRUE;
-
-CREATE VIEW department_summary AS
-SELECT
-    d.id,
-    d.department_name,
-    d.location,
-    d.budget,
-    COUNT(e.id) as employee_count,
-    AVG(e.salary) as avg_salary,
-    MIN(e.hire_date) as oldest_employee_hire_date,
-    MAX(e.hire_date) as newest_employee_hire_date
-FROM departments d
-         LEFT JOIN employees e ON d.id = e.department_id AND e.is_active = TRUE
-WHERE d.is_active = TRUE
-GROUP BY d.id, d.department_name, d.location, d.budget;

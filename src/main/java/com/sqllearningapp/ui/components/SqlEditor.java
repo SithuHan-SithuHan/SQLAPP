@@ -17,6 +17,7 @@ import java.time.Duration;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * Enhanced SQL Editor - Preserves and improves your syntax highlighting
@@ -74,7 +75,10 @@ public class SqlEditor extends CodeArea {
     private ContextMenu contextMenu;
 
     // Auto-completion
-    private final List<String> autoCompleteWords;
+    private final ArrayList<String> autoCompleteWords;  // Use ArrayList specifically
+
+    // Syntax highlighting timer
+    private java.util.Timer syntaxTimer;
 
     public SqlEditor() {
         super();
@@ -122,30 +126,42 @@ public class SqlEditor extends CodeArea {
     }
 
     private void setupSyntaxHighlighting() {
-        // Enhanced syntax highlighting with debouncing
-        multiPlainChanges()
-                .successionEnds(Duration.ofMillis(300))
-                .subscribe(ignore -> {
-                    Task<StyleSpans<Collection<String>>> task = new Task<>() {
-                        @Override
-                        protected StyleSpans<Collection<String>> call() {
-                            return computeHighlighting(getText());
-                        }
-                    };
+        // FIX: Use Timer instead of ReactFX to avoid module issues
+        textProperty().addListener((obs, oldText, newText) -> {
+            // Cancel previous timer
+            if (syntaxTimer != null) {
+                syntaxTimer.cancel();
+            }
 
-                    task.setOnSucceeded(e -> {
-                        try {
-                            setStyleSpans(0, task.getValue());
-                        } catch (Exception ex) {
-                            // Handle any styling errors gracefully
-                            System.err.println("Syntax highlighting error: " + ex.getMessage());
-                        }
+            // Start new timer with 300ms delay
+            syntaxTimer = new java.util.Timer(true);
+            syntaxTimer.schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    javafx.application.Platform.runLater(() -> {
+                        Task<StyleSpans<Collection<String>>> task = new Task<>() {
+                            @Override
+                            protected StyleSpans<Collection<String>> call() {
+                                return computeHighlighting(getText());
+                            }
+                        };
+
+                        task.setOnSucceeded(e -> {
+                            try {
+                                setStyleSpans(0, task.getValue());
+                            } catch (Exception ex) {
+                                // Handle any styling errors gracefully
+                                System.err.println("Syntax highlighting error: " + ex.getMessage());
+                            }
+                        });
+
+                        Thread thread = new Thread(task);
+                        thread.setDaemon(true);
+                        thread.start();
                     });
-
-                    Thread thread = new Thread(task);
-                    thread.setDaemon(true);
-                    thread.start();
-                });
+                }
+            }, 300);
+        });
     }
 
     private StyleSpans<Collection<String>> computeHighlighting(String text) {
@@ -316,18 +332,22 @@ public class SqlEditor extends CodeArea {
 
         String partialWord = text.substring(wordStart, caretPos).toUpperCase();
 
-        // Find matching completions
-        List<String> matches = autoCompleteWords.stream()
-                .filter(word -> word.startsWith(partialWord))
-                .sorted()
-                .toList();
+        // Find matching completions - FIX: Use ArrayList methods directly
+        ArrayList<String> matches = new ArrayList<>();
+        for (String word : autoCompleteWords) {
+            if (word.startsWith(partialWord)) {
+                matches.add(word);
+            }
+        }
+        Collections.sort(matches);
 
-        if (matches.size() == 1) {
+        int matchCount = matches.size();  // FIX: Direct access to ArrayList size
+        if (matchCount == 1) {
             // Single match - complete it
             String completion = matches.get(0).substring(partialWord.length());
             insertText(caretPos, completion);
             return true;
-        } else if (matches.size() > 1) {
+        } else if (matchCount > 1) {
             // Multiple matches - show the first common prefix
             String commonPrefix = findCommonPrefix(matches);
             if (commonPrefix.length() > partialWord.length()) {
@@ -348,16 +368,22 @@ public class SqlEditor extends CodeArea {
         String partialWord = wordStart < caretPos ?
                 text.substring(wordStart, caretPos).toUpperCase() : "";
 
-        List<String> matches = autoCompleteWords.stream()
-                .filter(word -> word.startsWith(partialWord))
-                .sorted()
-                .limit(10) // Limit to 10 suggestions
-                .toList();
+        // FIX: Use ArrayList methods directly with manual limiting
+        ArrayList<String> matches = new ArrayList<>();
+        int count = 0;
+        for (String word : autoCompleteWords) {
+            if (word.startsWith(partialWord) && count < 10) {
+                matches.add(word);
+                count++;
+            }
+        }
+        Collections.sort(matches);
 
-        if (!matches.isEmpty()) {
+        int matchCount = matches.size();  // FIX: Direct access to ArrayList size
+        if (matchCount > 0) {
             // For now, just complete with the first match
             // In a full implementation, you'd show a popup list
-            if (matches.size() == 1 || partialWord.isEmpty()) {
+            if (matchCount == 1 || partialWord.isEmpty()) {
                 String completion = matches.get(0);
                 if (!partialWord.isEmpty()) {
                     completion = completion.substring(partialWord.length());
@@ -375,8 +401,9 @@ public class SqlEditor extends CodeArea {
         return start;
     }
 
-    private String findCommonPrefix(List<String> words) {
-        if (words.isEmpty()) return "";
+    private String findCommonPrefix(ArrayList<String> words) {  // FIX: Use ArrayList directly
+        int wordCount = words.size();  // FIX: Direct access to ArrayList size
+        if (wordCount == 0) return "";
 
         String first = words.get(0);
         int prefixLen = first.length();
@@ -557,6 +584,13 @@ public class SqlEditor extends CodeArea {
             getStyleClass().add("read-only");
         } else {
             getStyleClass().remove("read-only");
+        }
+    }
+
+    // Clean up timer when editor is disposed
+    public void dispose() {
+        if (syntaxTimer != null) {
+            syntaxTimer.cancel();
         }
     }
 

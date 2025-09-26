@@ -2,6 +2,7 @@ package com.sqllearningapp;
 
 import atlantafx.base.theme.PrimerLight;
 import com.sqllearningapp.core.database.EmbeddedDatabase;
+import com.sqllearningapp.core.database.QueryExecutor;
 import com.sqllearningapp.core.services.LearningContentService;
 import com.sqllearningapp.core.services.PracticeService;
 import com.sqllearningapp.core.services.ProgressTrackingService;
@@ -22,11 +23,12 @@ public class SQLLearningApplication extends Application {
     private LearningContentService learningService;
     private PracticeService practiceService;
     private ProgressTrackingService progressTrackingService;
+    private QueryExecutor queryExecutor;
     private MainWindow mainWindow;
 
     public static void main(String[] args) {
         // System properties for optimal JavaFX performance
-        System.setProperty("javafx.preloader", "false");
+        // FIX: Remove the invalid preloader setting
         System.setProperty("prism.lcdtext", "false");
         System.setProperty("prism.text", "t2k");
 
@@ -51,10 +53,13 @@ public class SQLLearningApplication extends Application {
             databaseManager = new EmbeddedDatabase();
             databaseManager.initialize();
 
+            // Initialize query executor (required by PracticeService)
+            queryExecutor = new QueryExecutor(databaseManager);
+
             // Initialize services
             learningService = new LearningContentService();
-            practiceService = new PracticeService();
-            progressTrackingService = new ProgressTrackingService(progressManager);
+            practiceService = new PracticeService(queryExecutor);
+            progressTrackingService = new ProgressTrackingService();
 
             log.info("Application initialization completed successfully");
 
@@ -72,13 +77,13 @@ public class SQLLearningApplication extends Application {
             // Set modern theme
             Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
 
-            // Create main window with all services
+            // Create main window with all services IN THE CORRECT ORDER
             mainWindow = new MainWindow(
-                    databaseManager,
-                    learningService,
-                    practiceService,
-                    progressTrackingService,
-                    configManager
+                    databaseManager,        // 1st: EmbeddedDatabase database
+                    configManager,          // 2nd: ConfigManager configManager
+                    learningService,        // 3rd: LearningContentService learningContentService
+                    practiceService,        // 4th: PracticeService practiceService
+                    progressTrackingService // 5th: ProgressTrackingService progressTrackingService
             );
 
             // Show the main window
@@ -120,11 +125,6 @@ public class SQLLearningApplication extends Application {
             // Close database
             if (databaseManager != null) {
                 databaseManager.close();
-            }
-
-            // Shutdown main window
-            if (mainWindow != null) {
-                mainWindow.shutdown();
             }
 
             log.info("Application shutdown completed successfully");

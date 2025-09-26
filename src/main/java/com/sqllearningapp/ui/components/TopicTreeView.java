@@ -27,26 +27,8 @@ public class TopicTreeView extends TreeView<String> {
         getStyleClass().add("topic-tree");
         setShowRoot(false);
 
-        // Custom cell factory for enhanced display
+        // Custom cell factory for enhanced display (includes tooltips)
         setCellFactory(tv -> new TopicTreeCell());
-
-        // Enable tooltips and context menu
-        setRowFactory(tv -> {
-            var row = new TreeCell<String>();
-
-            row.itemProperty().addListener((obs, oldItem, newItem) -> {
-                if (newItem != null && row.getTreeItem() != null) {
-                    // Add tooltip with topic information
-                    if (row.getTreeItem().isLeaf()) {
-                        Tooltip tooltip = new Tooltip();
-                        tooltip.setText(createTooltipText(newItem));
-                        row.setTooltip(tooltip);
-                    }
-                }
-            });
-
-            return row;
-        });
     }
 
     private void loadTopics() {
@@ -105,6 +87,7 @@ public class TopicTreeView extends TreeView<String> {
             if (empty || item == null) {
                 setText(null);
                 setGraphic(null);
+                setTooltip(null);
                 getStyleClass().removeAll("category-item", "topic-item", "viewed-topic", "unviewed-topic");
             } else {
                 setText(item);
@@ -117,6 +100,10 @@ public class TopicTreeView extends TreeView<String> {
                     if (treeItem.isLeaf()) {
                         // Topic item
                         getStyleClass().add("topic-item");
+
+                        // Add tooltip for topic items
+                        Tooltip tooltip = new Tooltip(createTooltipText(item));
+                        setTooltip(tooltip);
 
                         // Check if viewed
                         boolean viewed = learningContentService.isTopicViewed(item);
@@ -131,6 +118,7 @@ public class TopicTreeView extends TreeView<String> {
                     } else {
                         // Category item
                         getStyleClass().add("category-item");
+                        setTooltip(null); // No tooltip for categories
 
                         // Add category icons
                         String icon = getCategoryIcon(item);

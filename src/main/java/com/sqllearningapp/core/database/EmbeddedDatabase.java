@@ -14,8 +14,8 @@ import java.util.Scanner;
 @Slf4j
 public class EmbeddedDatabase {
 
-    // Main database for app data (persistent)
-    private static final String MAIN_DB_URL = "jdbc:h2:./data/sqllearning;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE";
+    // FIX: Remove conflicting parameters for H2 v2.2.224 compatibility
+    private static final String MAIN_DB_URL = "jdbc:h2:./data/sqllearning;AUTO_SERVER=TRUE";
 
     // Practice database for SQL exercises (in-memory, resetable)
     private static final String PRACTICE_DB_URL = "jdbc:h2:mem:practice;DB_CLOSE_DELAY=-1";
@@ -78,7 +78,7 @@ public class EmbeddedDatabase {
         practiceConnection = DriverManager.getConnection(PRACTICE_DB_URL, "sa", "");
 
         // Always create fresh practice tables for exercises
-        executeScript("/database/practice-schema.sql.sql", practiceConnection);
+        executeScript("/database/practice-schema.sql", practiceConnection);
         executeScript("/database/sample-data.sql", practiceConnection);
         log.info("Practice database initialized with sample data");
     }

@@ -112,7 +112,7 @@ public class ConfigManager {
         defaultConfig.setAutoAdvanceTopics(false);
         defaultConfig.setShowHints(true);
         defaultConfig.setTrackProgress(true);
-        defaultConfig.setPlaySounds(false);
+        defaultConfig.setPlaySound(false); // Fixed: changed from setPlaySounds() to setPlaySound()
 
         // Developer settings
         defaultConfig.setDebugMode(false);
@@ -206,6 +206,16 @@ public class ConfigManager {
         saveConfiguration();
     }
 
+    // Add convenience method for sound settings
+    public boolean isPlaySound() {
+        return config.isPlaySound();
+    }
+
+    public void setPlaySound(boolean playSound) {
+        config.setPlaySound(playSound);
+        saveConfiguration();
+    }
+
     // ===== STATISTICS =====
 
     public void incrementUsageStat(String statName) {
@@ -232,6 +242,7 @@ public class ConfigManager {
         summary.put("theme", config.getTheme());
         summary.put("fontSize", config.getFontSize());
         summary.put("debugMode", config.isDebugMode());
+        summary.put("playSound", config.isPlaySound());
         summary.put("createdDate", config.getCreatedDate());
         summary.put("lastAccessed", config.getLastAccessed());
         summary.put("usageStats", config.getUsageStats());
@@ -280,7 +291,7 @@ public class ConfigManager {
         private boolean autoAdvanceTopics = false;
         private boolean showHints = true;
         private boolean trackProgress = true;
-        private boolean playSound = false;
+        private boolean playSound = false; // Note: field name is playSound (singular)
         private String learningMode = "guided"; // guided, free-form
 
         // Practice settings

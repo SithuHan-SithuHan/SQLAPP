@@ -24,6 +24,17 @@ public class UserProgress {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastUpdated;
 
+    // Add this method to the outer class
+    public double getCompletionPercentage() {
+        if (statistics == null || statistics.getCategoryProgress() == null) {
+            return 0;
+        }
+        int totalQuestions = statistics.getCategoryProgress().values().stream()
+                .mapToInt(Integer::intValue).sum();
+        return totalQuestions > 0 && completedQuestions != null ?
+                (double) completedQuestions.size() / totalQuestions * 100 : 0;
+    }
+
     @Data
     @Builder
     public static class Statistics {
@@ -40,12 +51,7 @@ public class UserProgress {
                     (double) successfulQueries / totalQueriesExecuted * 100 : 0;
         }
 
-        public double getCompletionPercentage() {
-            int totalQuestions = categoryProgress.values().stream()
-                    .mapToInt(Integer::intValue).sum();
-            return totalQuestions > 0 ?
-                    (double) completedQuestions.size() / totalQuestions * 100 : 0;
-        }
+        // Remove the problematic method from here since it needs access to outer class fields
     }
 
     @Data

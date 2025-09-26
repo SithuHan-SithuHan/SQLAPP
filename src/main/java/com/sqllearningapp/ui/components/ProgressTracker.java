@@ -33,7 +33,7 @@ public class ProgressTracker extends VBox {
     private FlowPane badgesPane;
     private VBox statisticsBox;
     private Label streakLabel;
-
+    private Label streakIcon;
     // Current progress state
     private UserProgress currentProgress;
     private double lastOverallProgress = 0.0;
@@ -164,7 +164,7 @@ public class ProgressTracker extends VBox {
         HBox streakBox = new HBox(8);
         streakBox.setAlignment(Pos.CENTER_LEFT);
 
-        Label streakIcon = new Label("🔥");
+        streakIcon = new Label("🔥");
         streakIcon.getStyleClass().add("streak-icon");
 
         streakLabel = new Label("Current Streak: 0");
@@ -389,9 +389,6 @@ public class ProgressTracker extends VBox {
     }
 
     private void animateStreakFlame() {
-        // Animate the streak flame icon
-        Label streakIcon = (Label) ((HBox) getChildren().get(3).getChildren().get(1)).getChildren().get(0);
-
         ScaleTransition scale = new ScaleTransition(Duration.seconds(0.5), streakIcon);
         scale.setFromX(1.0);
         scale.setFromY(1.0);
@@ -399,7 +396,6 @@ public class ProgressTracker extends VBox {
         scale.setToY(1.2);
         scale.setAutoReverse(true);
         scale.setCycleCount(2);
-
         scale.play();
     }
 
